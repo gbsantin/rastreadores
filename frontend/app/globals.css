@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Paleta de cores - Light Mode */
+    --background: 232 100% 95%; /* Azure X11 #E8F1F2 */
+    --foreground: 0 0% 12%; /* Dark Navy #1F2121 */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+    
+    --primary: 200 78% 49%; /* Carolina Blue #1B98E0 */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 200 100% 29%; /* Sapphire Blue #006494 */
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 66%; /* Cinza Médio #A7A9A9 */
+    --muted-foreground: 0 0% 12%; /* Dark Navy */
+    
+    --accent: 200 61% 38%; /* Celadon Blue #247BA0 */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 200 100% 29%; /* Sapphire Blue */
+    --input: 200 100% 29%; /* Sapphire Blue */
+    --ring: 200 78% 49%; /* Carolina Blue */
+    
+    --radius: 0.75rem; /* 12px */
+  }
+
+  .dark {
+    /* Paleta de cores - Dark Mode */
+    --background: 200 50% 10%; /* Prussian Blue #13293D */
+    --foreground: 0 0% 95%;
+    
+    --card: 200 50% 12%; /* Prussian Blue mais claro */
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 200 50% 12%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 200 78% 49%; /* Carolina Blue */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 200 100% 29%; /* Sapphire Blue */
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 40%;
+    --muted-foreground: 0 0% 75%;
+    
+    --accent: 200 61% 38%; /* Celadon Blue */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 200 100% 29%; /* Sapphire Blue */
+    --input: 200 100% 29%;
+    --ring: 200 78% 49%; /* Carolina Blue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-azure text-darkNavy;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Transições suaves */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+}
+
+@layer utilities {
+  /* Grid de 8px para espaçamento */
+  .space-grid {
+    @apply space-y-2; /* 8px */
+  }
+  
+  .space-grid-lg {
+    @apply space-y-4; /* 16px */
+  }
+  
+  .space-grid-xl {
+    @apply space-y-6; /* 24px */
+  }
+  
+  /* Sombras suaves */
+  .shadow-soft {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-medium {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Border radius padrão */
+  .rounded-card {
+    @apply rounded-lg; /* 12px */
+  }
+  
+  .rounded-input {
+    @apply rounded-md; /* 8px */
+  }
+  
+  .rounded-small {
+    @apply rounded-sm; /* 6px */
+  }
+}
