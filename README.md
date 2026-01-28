@@ -176,6 +176,34 @@ cd ~/projects/rastreamento
 - O MySQL roda na porta **3307** externamente para evitar conflitos
 - Todos os dados são persistidos nos diretórios `data/` e `logs/`
 
+## 🔄 Workflow de Desenvolvimento
+
+Este projeto segue um workflow específico:
+
+1. **Desenvolvimento no WSL**: Todas as alterações são feitas e testadas primeiro no WSL
+2. **Teste Local**: Validar tudo funcionando antes de enviar para produção
+3. **Deploy Seguro**: Enviar para Hetzner apenas quando tudo estiver funcionando
+4. **Proteção de Dados**: **NUNCA** substituir/apagar dados do Hetzner
+
+⚠️ **IMPORTANTE**: 
+- O arquivo `.env` e a pasta `data/` **NÃO** são sincronizados para o Hetzner
+- Dados do Hetzner estão em uso e **NÃO devem ser substituídos**
+- Consulte [WORKFLOW.md](WORKFLOW.md) para detalhes completos
+
+### Deploy para Hetzner
+
+Use o script de deploy seguro:
+```bash
+./deploy-hetzner.sh
+```
+
+Ou manualmente:
+```bash
+rsync -avz -e "ssh -i ~/.ssh/hetzner_ed25519" \
+  --exclude='.git' --exclude='data' --exclude='logs' --exclude='.env' \
+  . gabriel@46.62.210.165:~/projects/rastreadores/
+```
+
 ## 🐛 Troubleshooting
 
 ### Erro "Send Failed" no app móvel
