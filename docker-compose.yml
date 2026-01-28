@@ -57,6 +57,7 @@ services:
       - ./logs:/opt/traccar/logs
       - ./config/traccar.xml:/opt/traccar/conf/traccar.xml:ro
       - ./data/traccar:/opt/traccar/data
+      - ./custom/web/styles.css:/opt/traccar/web/styles.css:ro
 
   autoheal:
     image: willfarrell/autoheal:latest

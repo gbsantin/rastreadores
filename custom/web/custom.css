@@ -1,0 +1,77 @@
+/* ============================================
+   TRACCAR CUSTOM THEME - Paleta de Cores
+   ============================================
+   
+   Paleta:
+   - Prussian Blue (#13293D) - Backgrounds escuros
+   - Sapphire Blue (#006494) - Backgrounds secundários
+   - Celadon Blue (#247BA0) - Destaque, componentes ativos
+   - Carolina Blue (#1B98E0) - Botões primary, links
+   - Azure X11 (#E8F1F2) - Backgrounds claros
+   - Dark Navy (#1F2121) - Textos principais
+   - Cinza Médio (#A7A9A9) - Textos secundários
+   ============================================ */
+
+/* Variáveis CSS para fácil manutenção */
+:root {
+  --prussian-blue: #13293D;
+  --sapphire-blue: #006494;
+  --celadon-blue: #247BA0;
+  --carolina-blue: #1B98E0;
+  --azure-x11: #E8F1F2;
+  --dark-navy: #1F2121;
+  --cinza-medio: #A7A9A9;
+}
+
+/* ============================================
+   PRIMEIRA INTERVENÇÃO: HEADER/NAVIGATION
+   ============================================ */
+
+/* Header Principal - Fundo Prussian Blue */
+.MuiAppBar-root,
+[class*="AppBar"],
+[class*="appBar"],
+header {
+  background-color: var(--prussian-blue) !important;
+  color: white !important;
+}
+
+/* Toolbar do Header */
+.MuiToolbar-root,
+[class*="Toolbar"],
+[class*="toolbar"] {
+  background-color: var(--prussian-blue) !important;
+}
+
+/* Logo e textos do header em branco */
+.MuiTypography-root,
+[class*="Typography"],
+header * {
+  color: white !important;
+}
+
+/* Botões no header */
+header button,
+header .MuiButton-root,
+header [class*="Button"] {
+  color: white !important;
+}
+
+header button:hover,
+header .MuiButton-root:hover {
+  background-color: var(--sapphire-blue) !important;
+}
+
+/* Ícones no header */
+header svg,
+header [class*="Icon"] {
+  color: white !important;
+  fill: white !important;
+}
+
+/* ============================================
+   Transições suaves
+   ============================================ */
+* {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease !important;
+}
