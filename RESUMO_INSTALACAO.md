@@ -49,7 +49,7 @@
 
 - **README.md**: Guia completo de uso e configuração
 - **INSTALACAO.md**: Detalhes técnicos da instalação
-- **Repositório Git**: https://github.com/gbsantin/rastreamento
+- **Repositório Git**: https://github.com/gbsantin/rastreadores
 
 ## 🛠️ Comandos Úteis
 
