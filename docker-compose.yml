@@ -49,6 +49,8 @@ services:
       retries: 3
     ports:
       - "${TRACCAR_WEB_PORT:-8082}:8082"  # Porta web do Traccar
+      - "${TRACCAR_CLIENT_PORT:-5055}:5055"  # Porta do Traccar Client (app móvel)
+      - "${TRACCAR_CLIENT_PORT:-5055}:5055/udp"  # Porta UDP do Traccar Client
       - "${TRACCAR_GPS_START:-5005}-${TRACCAR_GPS_END:-5006}:5005-5006"  # Portas GPS (ajustar conforme necessário)
       - "${TRACCAR_GPS_START:-5005}-${TRACCAR_GPS_END:-5006}:5005-5006/udp"  # UDP para GPS
     volumes:

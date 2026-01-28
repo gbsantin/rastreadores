@@ -7,6 +7,7 @@ Sistema de rastreamento GPS usando Traccar, instalado e configurado para ambient
 - Docker e Docker Compose instalados
 - Portas disponíveis:
   - **8082**: Interface web do Traccar
+  - **5055**: Porta do Traccar Client (app móvel) - TCP e UDP
   - **5005-5006**: Portas para comunicação GPS (TCP e UDP)
   - **3307**: MySQL (porta externa, interna é 3306)
 
@@ -77,6 +78,13 @@ TRACCAR_WEB_PORT=8083  # Use outra porta se 8082 estiver ocupada
 Edite o arquivo `.env`:
 ```env
 MYSQL_PASSWORD=sua_senha_segura_aqui
+```
+
+### Alterar porta do Traccar Client
+
+Edite o arquivo `.env`:
+```env
+TRACCAR_CLIENT_PORT=5055  # Porta padrão do app móvel
 ```
 
 ### Adicionar mais portas GPS
@@ -170,6 +178,13 @@ cd ~/projects/rastreamento
 
 ## 🐛 Troubleshooting
 
+### Erro "Send Failed" no app móvel
+
+Se o Traccar Client mostra erro ao enviar localização:
+1. Verifique se a URL do servidor usa porta **5055** (não 8082)
+2. Verifique se o Device ID está cadastrado no servidor
+3. Consulte [CONFIGURACAO_CLIENT.md](CONFIGURACAO_CLIENT.md) para mais detalhes
+
 ### Container não inicia
 ```bash
 docker compose logs traccar
@@ -179,6 +194,7 @@ docker compose logs traccar
 Verifique qual processo está usando a porta:
 ```bash
 ss -tulpn | grep 8082
+ss -tulpn | grep 5055
 ```
 
 ### Problemas de conexão com banco
