@@ -63,10 +63,19 @@ nav > div {
   background-color: var(--prussian-blue) !important;
 }
 
+/* CORREÇÃO DE CONTRASTE: Textos em fundos escuros = BRANCO */
+.MuiAppBar-root *,
+header *,
+[class*="AppBar"] *,
+[class*="appBar"] *,
+nav[class*="header"] *,
+div[class*="header"] * {
+  color: white !important;
+}
+
 /* Logo e textos do header em branco */
 .MuiTypography-root,
 [class*="Typography"],
-header *,
 header h1,
 header h2,
 header h3,
@@ -74,7 +83,8 @@ header h4,
 header h5,
 header h6,
 header p,
-header span {
+header span,
+header label {
   color: white !important;
 }
 
@@ -82,22 +92,29 @@ header span {
 header button,
 header .MuiButton-root,
 header [class*="Button"],
-header a[class*="button"] {
+header a[class*="button"],
+header [role="button"] {
   color: white !important;
+  background-color: transparent !important;
 }
 
 header button:hover,
 header .MuiButton-root:hover,
-header button:focus {
+header button:focus,
+header [role="button"]:hover {
   background-color: var(--sapphire-blue) !important;
+  color: white !important;
 }
 
 /* Ícones no header */
 header svg,
 header [class*="Icon"],
-header [class*="icon"] {
+header [class*="icon"],
+header path,
+header g {
   color: white !important;
   fill: white !important;
+  stroke: white !important;
 }
 
 /* Links no header */
@@ -110,8 +127,180 @@ header a:hover {
 }
 
 /* ============================================
+   ÁREA DO USUÁRIO LOGADO NO HEADER
+   ============================================ */
+
+/* Container do usuário no header */
+header [class*="user"],
+header [class*="User"],
+header [class*="account"],
+header [class*="Account"],
+header [class*="profile"],
+header [class*="Profile"],
+header [class*="avatar"],
+header [class*="Avatar"] {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 4px 12px !important;
+  border-radius: 8px !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+/* Avatar do usuário */
+header img[class*="avatar"],
+header [class*="Avatar"] img,
+header [class*="avatar"] {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  border: 2px solid white !important;
+  background-color: var(--carolina-blue) !important;
+}
+
+/* Nome do usuário no header */
+header [class*="user"] span,
+header [class*="User"] span,
+header [class*="userName"],
+header [class*="username"] {
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+/* Email do usuário no header (se houver) */
+header [class*="user"] [class*="email"],
+header [class*="User"] [class*="email"] {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 12px !important;
+}
+
+/* ============================================
+   CARDS DO MENU COM EFEITO 3D
+   ============================================ */
+
+/* Cards/Menu items com efeito 3D */
+[class*="MenuItem"],
+[class*="menu-item"],
+[class*="Menu-Item"],
+[class*="Card"],
+[class*="card"],
+[class*="Panel"],
+[class*="panel"],
+.MuiCard-root,
+.MuiPaper-root,
+[class*="MuiPaper"],
+[class*="MuiCard"] {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+              0 2px 4px rgba(0, 0, 0, 0.06),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  background-color: white !important;
+  border: 1px solid var(--celadon-blue) !important;
+}
+
+/* Hover nos cards - efeito 3D mais pronunciado */
+[class*="MenuItem"]:hover,
+[class*="menu-item"]:hover,
+[class*="Card"]:hover,
+[class*="card"]:hover,
+.MuiCard-root:hover,
+.MuiPaper-root:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 
+              0 4px 6px rgba(0, 0, 0, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Cards ativos/selecionados */
+[class*="MenuItem"][class*="active"],
+[class*="MenuItem"][class*="selected"],
+[class*="menu-item"][class*="active"],
+.MuiCard-root[class*="selected"],
+.MuiPaper-root[class*="selected"] {
+  background-color: var(--celadon-blue) !important;
+  color: white !important;
+  box-shadow: 0 6px 10px rgba(36, 123, 160, 0.3), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* CORREÇÃO DE CONTRASTE: Textos em cards claros = ESCURO */
+[class*="Card"] *,
+[class*="card"] *,
+[class*="Panel"] *,
+[class*="panel"] *,
+.MuiCard-root *,
+.MuiPaper-root * {
+  color: var(--dark-navy) !important;
+}
+
+/* Cards com fundo escuro - textos brancos */
+[class*="Card"][style*="background"][style*="dark"],
+[class*="Card"][class*="dark"],
+.MuiCard-root[class*="dark"],
+.MuiPaper-root[class*="dark"] {
+  background-color: var(--sapphire-blue) !important;
+}
+
+[class*="Card"][class*="dark"] *,
+.MuiCard-root[class*="dark"] *,
+.MuiPaper-root[class*="dark"] * {
+  color: white !important;
+}
+
+/* Cards ativos - textos brancos */
+[class*="MenuItem"][class*="active"] *,
+[class*="menu-item"][class*="active"] *,
+.MuiCard-root[class*="selected"] * {
+  color: white !important;
+}
+
+/* ============================================
+   CORREÇÕES GERAIS DE CONTRASTE
+   ============================================ */
+
+/* Fundos escuros = textos brancos */
+[style*="background"][style*="dark"],
+[class*="dark"],
+[class*="Dark"],
+body[class*="dark"] {
+  background-color: var(--prussian-blue) !important;
+  color: white !important;
+}
+
+[style*="background"][style*="dark"] *,
+[class*="dark"] *,
+body[class*="dark"] * {
+  color: white !important;
+}
+
+/* Fundos claros = textos escuros */
+[style*="background"][style*="light"],
+[class*="light"],
+body,
+body[class*="light"] {
+  background-color: var(--azure-x11) !important;
+  color: var(--dark-navy) !important;
+}
+
+body *,
+[class*="light"] * {
+  color: var(--dark-navy) !important;
+}
+
+/* Override para elementos específicos em fundos claros */
+body input,
+body textarea,
+body select,
+body button:not(header button) {
+  color: var(--dark-navy) !important;
+}
+
+/* ============================================
    Transições suaves
    ============================================ */
 * {
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease !important;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
 }
