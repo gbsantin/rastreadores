@@ -56,12 +56,12 @@
 ### Ver status dos containers
 ```bash
 # WSL
-cd /home/gabriel/projects/rastreamento
+cd /home/gabriel/projects/rastreadores
 docker compose ps
 
 # Hetzner
 ssh -i ~/.ssh/hetzner_ed25519 gabriel@46.62.210.165
-cd ~/projects/rastreamento
+cd ~/projects/rastreadores
 docker-compose ps
 ```
 

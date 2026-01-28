@@ -21,8 +21,8 @@ Este documento descreve o processo de instalação do Traccar nos ambientes WSL 
 
 1. **Criação da estrutura do projeto**
    ```bash
-   mkdir -p /home/gabriel/projects/rastreamento
-   cd /home/gabriel/projects/rastreamento
+   mkdir -p /home/gabriel/projects/rastreadores
+   cd /home/gabriel/projects/rastreadores
    ```
 
 2. **Configuração do ambiente**
@@ -83,8 +83,8 @@ Este documento descreve o processo de instalação do Traccar nos ambientes WSL 
 
 3. **Criação da estrutura do projeto**
    ```bash
-   mkdir -p ~/projects/rastreamento
-   cd ~/projects/rastreamento
+   mkdir -p ~/projects/rastreadores
+   cd ~/projects/rastreadores
    ```
 
 4. **Cópia dos arquivos do WSL**

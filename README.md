@@ -15,7 +15,7 @@ Sistema de rastreamento GPS usando Traccar, instalado e configurado para ambient
 ### 1. Clone o repositório (ou use este diretório)
 
 ```bash
-cd /home/gabriel/projects/rastreamento
+cd /home/gabriel/projects/rastreadores
 ```
 
 ### 2. Configure as variáveis de ambiente
