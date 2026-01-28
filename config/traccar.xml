@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
+
+<properties>
+    <!-- Configuração básica do Traccar -->
+    <!-- A maioria das configurações será feita via variáveis de ambiente -->
+    
+    <!-- Porta HTTP (padrão 8082) -->
+    <entry key='web.port'>8082</entry>
+    
+    <!-- Interface de rede (0.0.0.0 = todas as interfaces) -->
+    <entry key='web.address'>0.0.0.0</entry>
+    
+    <!-- Logs -->
+    <entry key='logger.enable'>true</entry>
+    <entry key='logger.file'>/opt/traccar/logs/tracker-server.log</entry>
+    
+    <!-- Configurações de protocolos GPS comuns -->
+    <!-- Os protocolos serão habilitados automaticamente conforme necessário -->
+    
+</properties>
